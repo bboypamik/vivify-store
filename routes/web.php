@@ -15,12 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 
-Route::get('products.create', [ProductController::class, 'index'])->name('products.create');
+Route::get('/', [ProductController::class, 'index']);
+
+Route::get('products.create', [ProductController::class, 'show'])->name('products.create');
 Route::post('products.create', [ProductController::class, 'store'])->name('products.store');
 
 
